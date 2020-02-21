@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_21_203004) do
+ActiveRecord::Schema.define(version: 2020_02_21_211232) do
 
   create_table "characters", force: :cascade do |t|
     t.string "name"
@@ -18,7 +18,9 @@ ActiveRecord::Schema.define(version: 2020_02_21_203004) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "kind_id"
+    t.integer "planet_id"
     t.index ["kind_id"], name: "index_characters_on_kind_id"
+    t.index ["planet_id"], name: "index_characters_on_planet_id"
   end
 
   create_table "characters_starships", force: :cascade do |t|
@@ -39,6 +41,15 @@ ActiveRecord::Schema.define(version: 2020_02_21_203004) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "planets", force: :cascade do |t|
+    t.string "name"
+    t.integer "population"
+    t.float "gravity"
+    t.float "diameter"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "starships", force: :cascade do |t|
     t.string "name"
     t.string "model"
@@ -49,6 +60,7 @@ ActiveRecord::Schema.define(version: 2020_02_21_203004) do
   end
 
   add_foreign_key "characters", "kinds"
+  add_foreign_key "characters", "planets"
   add_foreign_key "characters_starships", "characters"
   add_foreign_key "characters_starships", "starships"
 end
