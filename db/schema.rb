@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_21_211232) do
+ActiveRecord::Schema.define(version: 2020_02_21_212712) do
 
   create_table "characters", force: :cascade do |t|
     t.string "name"
@@ -39,6 +39,8 @@ ActiveRecord::Schema.define(version: 2020_02_21_211232) do
     t.string "average_lifespan"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "planet_id"
+    t.index ["planet_id"], name: "index_kinds_on_planet_id"
   end
 
   create_table "planets", force: :cascade do |t|
@@ -63,4 +65,5 @@ ActiveRecord::Schema.define(version: 2020_02_21_211232) do
   add_foreign_key "characters", "planets"
   add_foreign_key "characters_starships", "characters"
   add_foreign_key "characters_starships", "starships"
+  add_foreign_key "kinds", "planets"
 end
