@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  model: MyString
+  starship_class: MyString
+  cost_in_credits: MyString
+
+two:
+  name: MyString
+  model: MyString
+  starship_class: MyString
+  cost_in_credits: MyString
