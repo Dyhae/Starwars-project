@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class CharacterStarshipTest < ActiveSupport::TestCase
+class CharactersStarshipTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end
