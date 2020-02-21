@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_21_192605) do
+ActiveRecord::Schema.define(version: 2020_02_21_201256) do
 
   create_table "characters", force: :cascade do |t|
     t.string "name"
@@ -26,6 +26,15 @@ ActiveRecord::Schema.define(version: 2020_02_21_192605) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["character_id"], name: "index_characters_starships_on_character_id"
     t.index ["starship_id"], name: "index_characters_starships_on_starship_id"
+  end
+
+  create_table "kinds", force: :cascade do |t|
+    t.string "name"
+    t.string "classification"
+    t.string "designation"
+    t.string "average_lifespan"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "starships", force: :cascade do |t|
