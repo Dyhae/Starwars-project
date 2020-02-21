@@ -10,13 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_21_201256) do
+ActiveRecord::Schema.define(version: 2020_02_21_203004) do
 
   create_table "characters", force: :cascade do |t|
     t.string "name"
     t.string "birth_year"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "kind_id"
+    t.index ["kind_id"], name: "index_characters_on_kind_id"
   end
 
   create_table "characters_starships", force: :cascade do |t|
@@ -46,6 +48,7 @@ ActiveRecord::Schema.define(version: 2020_02_21_201256) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "characters", "kinds"
   add_foreign_key "characters_starships", "characters"
   add_foreign_key "characters_starships", "starships"
 end
