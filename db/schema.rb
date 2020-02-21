@@ -10,22 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_21_185819) do
-
-  create_table "character_starships", force: :cascade do |t|
-    t.integer "character_id", null: false
-    t.integer "starship_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["character_id"], name: "index_character_starships_on_character_id"
-    t.index ["starship_id"], name: "index_character_starships_on_starship_id"
-  end
+ActiveRecord::Schema.define(version: 2020_02_21_192605) do
 
   create_table "characters", force: :cascade do |t|
     t.string "name"
     t.string "birth_year"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "characters_starships", force: :cascade do |t|
+    t.integer "character_id", null: false
+    t.integer "starship_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["character_id"], name: "index_characters_starships_on_character_id"
+    t.index ["starship_id"], name: "index_characters_starships_on_starship_id"
   end
 
   create_table "starships", force: :cascade do |t|
@@ -37,6 +37,6 @@ ActiveRecord::Schema.define(version: 2020_02_21_185819) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  add_foreign_key "character_starships", "characters"
-  add_foreign_key "character_starships", "starships"
+  add_foreign_key "characters_starships", "characters"
+  add_foreign_key "characters_starships", "starships"
 end
