@@ -2,4 +2,5 @@
 
 class Kind < ApplicationRecord
   has_many :characters
+  belongs_to :planet
 end
