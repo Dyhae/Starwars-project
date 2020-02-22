@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_21_212712) do
+ActiveRecord::Schema.define(version: 2020_02_22_040159) do
 
   create_table "characters", force: :cascade do |t|
     t.string "name"
@@ -46,7 +46,7 @@ ActiveRecord::Schema.define(version: 2020_02_21_212712) do
   create_table "planets", force: :cascade do |t|
     t.string "name"
     t.integer "population"
-    t.float "gravity"
+    t.string "gravity"
     t.float "diameter"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
