@@ -11,7 +11,7 @@
       <div class="content_character">
           <h3>Birth Year: <%= @character.birth_year %></h3>
           <h3>Spieces: <%= @character.kind.name %></h3>
-          <h3>HomeWorld: <%= @character.planet.name %></h3>
+          <h3>HomeWorld: <%= link_to @character.planet.name, planet_path(@character.planet) %></h3>
       </div>
     <div class="content content_character">
       <h2>Starships:</h2>
