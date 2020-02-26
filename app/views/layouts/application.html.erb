@@ -6,10 +6,41 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <%= yield %>
+     <div class="container">
+      <header class="header_title">
+        <div class="header_links">
+          <%= link_to  root_path, :class => "header_Link" do%>
+            <p>Home </p>
+          <% end %>
+          <%= link_to kinds_path, :class => "header_Link" do%>
+            <p>Species </p>
+          <% end %>
+          <%= link_to characters_path, :class => "header_Link" do%>
+            <p>Characters</p>
+          <% end %>
+          <%= link_to starships_path, :class => "header_Link" do%>
+            <p>Starships</p>
+          <% end %>
+          <%= link_to permalink_path('about_us'), :class => "header_Link" do%>
+            <p>About Us</p>
+          <% end %>
+          <%= link_to permalink_path('contact'), :class => "header_Link" do%>
+            <p>Contact Us</p>
+          <% end %>
+        </div>
+
+      </header>
+      <div class= "body_container">
+        <%= yield %>
+      </div>
+    </div>
+       <footer>
+          CopyWrong Star Wars 2020
+        </footer>
   </body>
 </html>
