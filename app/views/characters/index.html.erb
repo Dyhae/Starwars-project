@@ -1,0 +1,19 @@
+<div class="body_container_inside">
+<% if @characters.empty? %>
+  <p>There are no Characters available</p>
+<% else %>
+    <% @characters.each do |character| %>
+      <%= link_to character_path(character), :class => "bodyLink" do%>
+        <div class="card">
+          <div class="content content_character">
+            <%= character.name %>
+          </div>
+        </div>
+      <% end%>
+    <% end %>
+<% end %>
+</div>
+<div class="pagination">
+<%= paginate @characters %>
+</div>
+
