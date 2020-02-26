@@ -1,0 +1,30 @@
+<div class="middle_body">
+  <%=image_tag 'Star-wars-logo-new-tall.jpg', class: 'image__character'%>
+  <div class="card show_card">
+    <div class="card-image">
+    <div class="card-content">
+      <div class="media">
+        <div class="media-content">
+          <h1 class="title is-4"><%= @kind.name %></h1>
+        </div>
+      </div>
+      <div class="content_character">
+          <h3>Classification: <%= @kind.classification %></h3>
+          <h3>Designation: <%= @kind.designation %></h3>
+          <h3>Average_lifespan: <%= @kind.average_lifespan %></h3>
+          <h3>HomeWorld: <%= @kind.planet.name %></h3>
+      </div>
+      <h2>Characters:</h2>
+      <div class="content content_character">
+        <% @kind.characters.each do |character| %>
+          <%= link_to character_path(character), :class=> "bodyLink" do%>
+            <div class="characters_in_planet content">
+              <h4><%= character.name %></h4>
+            </div>
+          <% end%>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
