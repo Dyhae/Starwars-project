@@ -1,13 +1,11 @@
+# frozen_string_literal: true
+
 class PlanetsController < ApplicationController
   def index
-
-    @planets = Planet.all
-
+    @planets = Planet.all.order(:name)
   end
 
   def show
-
-    @planet = Planet.find_by(params :id)
-
+    @planet = Planet.find(params[:id])
   end
 end

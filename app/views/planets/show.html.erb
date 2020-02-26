@@ -1,0 +1,37 @@
+<div class="middle_body">
+  <%=image_tag 'Star-wars-logo-new-tall.jpg', class: 'image__character'%>
+  <div class="card show_card cards_planet">
+    <div class="card-image">
+    <div class="card-content">
+      <div class="media">
+        <div class="media-content">
+          <h1 class="title is-4"><%= @planet.name %></h1>
+          <h3 class="title is-4"><%= @planet.population %></h3>
+          <h3 class="title is-4"><%= @planet.gravity %></h3>
+          <h3 class="title is-4"><%= @planet.diameter %></h3>
+        </div>
+      </div>
+          <h2>characters:</h2>
+          <div class="content content_character">
+            <% @planet.characters.each do |planet_characters| %>
+              <%= link_to character_path(planet_characters), :class=> "bodyLink" do%>
+                <div class="characters_in_planet">
+                  <h4><%= planet_characters.name  %></h4>
+                </div>
+              <% end%>
+            <% end %>
+          </div>
+          <h2>Species:</h2>
+          <div class="content content_character">
+            <% @planet.kinds.each do |kind| %>
+              <%= link_to kind_path(kind), :class=> "bodyLink" do%>
+                <div class="characters_in_planet">
+                  <h4><%= kind.name %></h4>
+                </div>
+              <% end%>
+            <% end %>
+          </div>
+
+    </div>
+  </div>
+</div>

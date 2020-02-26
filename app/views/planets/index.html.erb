@@ -1,0 +1,15 @@
+<div class="body_container_inside">
+<% if @planets.empty? %>
+  <p>There are no Characters available</p>
+<% else %>
+    <% @planets.each do |planet| %>
+      <%= link_to planet_path(planet), :class => "bodyLink" do%>
+        <div class="card">
+          <div class="content content_character">
+            <%= planet.name %>
+          </div>
+        </div>
+      <% end%>
+    <% end %>
+<% end %>
+</div>
