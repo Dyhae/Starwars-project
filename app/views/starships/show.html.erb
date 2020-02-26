@@ -1,0 +1,26 @@
+<div class="middle_body">
+  <%=image_tag 'Star-wars-logo-new-tall.jpg', class: 'image__character'%>
+  <div class="card show_card cards_planet">
+    <div class="card-image">
+    <div class="card-content">
+      <div class="media">
+        <div class="media-content">
+          <h1 class="title is-4">Name: <%= @starship.name %></h1>
+          <h3>Model: <%= @starship.model %></h3>
+          <h3>Starship_class: <%= @starship.starship_class %></h3>
+          <h3>Cost in credits: <%=@starship.cost_in_credits %></h3>
+        </div>
+      </div>
+        <h2>Characters:</h2>
+        <div class="content content_character">
+          <% @starship.characters.each do |character| %>
+            <%= link_to character_path(character), :class=> "bodyLink" do%>
+              <div class="characters_in_planet">
+                <h4><%= character.name %></h4>
+              </div>
+            <% end%>
+          <% end %>
+        </div>
+    </div>
+  </div>
+</div>
