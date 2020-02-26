@@ -13,3 +13,142 @@
  *= require_tree .
  *= require_self
  */
+ @import "bulma";
+ @import "bulma-extensions";
+
+ body {
+
+  height: 100vh;
+  overflow: hidden;
+  background-image: url("Star-wars-logo-new-tall.jpg");
+  background-repeat: no-repeat;
+  position: relative;
+  background-size: cover;
+}
+
+
+.container {
+  position: relative;
+  height: 95%;
+  width: 95%;
+  left: 45px;
+  top: 25px;
+}
+header {
+
+}
+.body_container {
+  position: absolute;
+  z-index: 0;
+  width: 80vw;
+  margin-top: 10vh;
+  padding: 15px;
+  margin-left: 5vw;
+  border: 1px solid white;
+  border-radius: 15px;
+  background-color: white;
+  opacity: 0.9;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+  overflow-y: scroll;
+  height: 700px;
+  margin-bottom: 10vh;
+  box-shadow: inset 0 0 0 2px white, 0.3em 0.3em 6em rgba(0, 0, 0, 0.3);
+}
+
+h2 {
+  align-self: center;
+
+}
+.body_container_inside {
+  display: flex;
+  flex-wrap: wrap;
+  position: absolute;
+
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 2px grey;
+  border-radius: 15px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: grey;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: darkgrey;
+}
+.title_image_header {
+  display: flex;
+}
+
+.image {
+  order: 3;
+  flex: 0 0 268px;
+  margin-right: 100px;
+  justify-content: right;
+  position: fixed;
+  right: 0;
+
+}
+.flex_second {
+  order: 2;
+  flex: 1;
+}
+
+.header_Link:not(:first-of-type){
+  border-left: 1mm solid grey;
+}
+
+.header_Link {
+  text-align: left;
+  padding: 5px 10px;
+}
+.header_links{
+  text-decoration: none;
+  font-size: medium;
+  font-weight: bold;
+  display: flex;
+
+}
+
+.header_title {
+  background: linear-gradient(white 20%, lightgrey 100%);
+  border-radius: 15px;
+  width: 80vw;
+  margin-left: 5vw;
+  position: absolute;
+  z-index: 0;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  padding: 5px;
+  margin: 20px;
+  margin-bottom: 5vh;
+  border: 2px solid rgb(128, 128, 128);
+  box-shadow: inset 0 0 0 2px white, 0.3em 0.3em 6em rgba(0, 0, 0, 0.3);
+  border-radius: 15px;
+  background-color: white;
+}
+
+.middle_body {
+  display: flex;
+  flex-direction: column;
+}
+
+.card {
+  z-index: 1;
+  border: 1px solid black;
+  border-radius: 15px;
+}
