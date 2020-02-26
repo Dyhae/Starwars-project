@@ -1,0 +1,11 @@
+<div class="body_container_inside flex">
+  <h1 class="page_title"><%= @page.title %></h1>
+  <article class="page_article">
+    <h3><%= @page.content %></h3>
+    <% if @page.title == "About StarWars" %>
+      <h3>Descriptions (ERD):</h3>
+      <%=image_tag 'ERDDiagram.PNG', class: 'image__diagram'%>
+    <% end %>
+  </article>
+  <h4 class="page_info">Last update: <%= @page.updated_at %></h4>
+</div>
