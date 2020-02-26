@@ -54,3 +54,8 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'swapi'
+gem 'bulma-rails'
+gem 'bulma-extensions-rails'
+gem 'kaminari'
+
+gem 'faker'
